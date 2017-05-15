@@ -27,6 +27,8 @@ app.UseMvc(routes =>
 ```
 
 2. **Attribute-based routing**
+
+
 featuring it either at the controller level:
 ```
 [Route("api/[controller]")]
@@ -37,3 +39,12 @@ And also featuring it at the action method level:
 [HttpGet("GetLatest")]
 public JsonResult GetLatest()
 ```
+
+3. **Three choices to route them all**
+>Long story short, ASP.NET Core is giving us three different choices for handling routes:
+enforcing the standard RESTful conventions, reverting back to the good old conventionbased
+routing, or decorating the controller files with the attribute-based routing.
+
+>It's also worth noticing that attribute-based routes, if/when defined, would override any
+matching convention-based pattern. Both of them if/when defined, would override the
+default RESTful conventions created by the built-in `UseMvc()` method.
