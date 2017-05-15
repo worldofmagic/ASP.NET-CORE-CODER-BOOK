@@ -1,4 +1,5 @@
 # **Handling routes in ASP.NET Core**
+Creat Model and Controller First.
 1. **Convention-based routing**
 ```
 app.UseMvc(routes =>
@@ -23,4 +24,16 @@ app.UseMvc(routes =>
       }
     );
 });
+```
+
+2. **Attribute-based routing**
+featuring it either at the controller level:
+```
+[Route("api/[controller]")]
+public class ItemsController : Controller
+```
+And also featuring it at the action method level:
+```
+[HttpGet("GetLatest")]
+public JsonResult GetLatest()
 ```
